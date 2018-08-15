@@ -1,0 +1,63 @@
+body {
+  background-image: url("/images/hogwartsschoolpotter.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: fixed; }
+
+#signup-button {
+  background-color: gold;
+  color: #003152;
+  font-family: "New";
+  font-size: 24px;
+  margin-left: 642px;
+  padding-bottom: .06rem;
+  position: fixed; }
+
+#signup-button:hover {
+  background-color: #003152;
+  color: gold; }
+
+h1 {
+  font-family: "Harry P";
+  text-align: center;
+  color: gold;
+  font-size: 200px;
+  margin-top: 60px; }
+
+h2 {
+  font-family: "Harry P";
+  font-size: 50px;
+  text-align: left;
+  color: gold; }
+
+h2:hover {
+  color: white; }
+
+h3 {
+  font-family: "New";
+  text-align: right;
+  margin-left: 1260px;
+  color: gold; }
+
+h3:hover {
+  color: white; }
+
+#navbar li {
+  display: inline-block;
+  list-style-type: none;
+  margin-top: 30px; }
+
+p {
+  font-family: "New";
+  text-align: center;
+  color: gold;
+  font-size: 22px; }
+
+.flash {
+  border: 1px black solid;
+  color: white; }
+  .flash.warning {
+    background-color: red; }
+
+/*# sourceMappingURL=main.css.map */
