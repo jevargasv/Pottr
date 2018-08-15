@@ -1,6 +1,12 @@
-<link rel="stylesheet" type="text/css" href="<%= url('/main.css') %>">
+<link rel="stylesheet" type="text/css" href="<%= url('/assets/login.css') %>">
+<div class="card">
+ <div class="card-body">
 <form id="login" action="/login" method="post">
-    <input type="text" name="username" id="username" placeholder="Username, please.">
-    <input type="password" name="password" id="password" placeholder="Password, please.">
+    Username: <input type="text" name="username" id="username" placeholder="Username, please.">
+    <br>
+    Password: <input type="password" name="password" id="password" placeholder="Password, please.">
+    <br>
     <input type="submit" value="LOGIN">
 </form>
+ </div>
+</div>
