@@ -1,20 +1,36 @@
 <link rel="stylesheet" type="text/css" href="<%= url('/assets/signup.css') %>">
-<div class="card">
-  <div class="card-body">
-<form id="signup" action="/sign_up" method="post">
-    First Name: <input type="text" name="first-name" id="first-name" placeholder="First name, please.">
+<div id="wrapper">
+<div id="navbar">
+<ul>
+ <li><a style="text-decoration:none;" href="/"><h2>P<h2></a></li>
+ <li><a style="text-decoration:none;" href="/login"><h3>Login</h3></a></li>
+</ul>
+</div>
+<br>
+<p>Sign Up</p>
+
+<div class="form">
+  <form class="signup" action="/sign_up" method="post">
+    <!-- First name -->
+    <input type="text" placeholder="First name, please.">
     <br>
-    Last Name: <input type="text" name="last-name" id="last-name" placeholder="Last name, please.">
+    <!-- Last name -->
+    <input type="text" placeholder="Last name, please.">
     <br>
-    E-mail: <input type="email" name="email" id="email" placeholder="Email, please.">
+    <!-- E-mail -->
+    <input type="email" placeholder="Email, please.">
     <br>
-    Birthday: <input type="date" name="birthday" id="birthday" placeholder="mm/dd/yyyy">
+    <!-- Birthday -->
+    <input type="date" style="height:30px; width:252px;" placeholder="mm/dd/yyyy">
     <br>
-    Username: <input type="text" name="username" id="username" placeholder="Username, please.">
+    <!-- Username -->
+    <input type="text" placeholder="Username, please.">
     <br>
-    Password: <input type="password" name="password" id="password" placeholder="Password, please.">
+    <!-- Password -->
+    <input type="password" placeholder="Password, please.">
     <br>
-    <input type="submit" value="SIGN UP">
-</form>
-  </div>
+    <!-- Sign in button -->
+    <button class="btn mt-5" id="signin-button" type="submit">Sign In</button>
+    <br>
+  </form>
 </div>
