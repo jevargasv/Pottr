@@ -55,7 +55,7 @@ p {
   font-size: 22px; }
 
 .flash {
-  border: 1px black solid;
+  border: none;
   color: white; }
   .flash.warning {
     background-color: red; }

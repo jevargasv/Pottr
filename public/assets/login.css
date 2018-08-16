@@ -5,14 +5,61 @@ body {
   background-size: cover;
   position: fixed; }
 
-.card {
-  margin-left: auto;
-  margin-right: auto;
-  width: 70rem;
-  height: 34rem;
-  display: flex;
-  align-items: center;
-  background-color: black;
-  opacity: 0.5; }
+h2 {
+  font-family: "Harry P";
+  font-size: 50px;
+  text-align: left;
+  color: gold; }
+
+h2:hover {
+  color: white; }
+
+h3 {
+  font-family: "New";
+  text-align: right;
+  margin-left: 1260px;
+  color: gold; }
+
+h3:hover {
+  color: white; }
+
+p {
+  font-family: "New";
+  text-align: center;
+  color: gold;
+  font-size: 50px; }
+
+.login {
+  display: block;
+  text-align: center;
+  padding: 20px; }
+
+input {
+  padding-right: 80px; }
+
+#signin-button {
+  background-color: gold;
+  color: #003152;
+  font-family: "New";
+  left: 644px;
+  font-size: 24px;
+  padding-bottom: .06rem;
+  position: fixed; }
+
+#signin-button:hover {
+  background-color: #003152;
+  color: gold; }
+
+#signup-button {
+  background-color: gold;
+  color: #003152;
+  font-family: "New";
+  font-size: 24px;
+  padding-bottom: .06rem;
+  position: fixed; }
+
+#signup-button:hover {
+  background-color: #003152;
+  color: gold; }
 
 /*# sourceMappingURL=login.css.map */
