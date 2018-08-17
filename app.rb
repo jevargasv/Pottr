@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
 require 'pg'
-require 'giphy'
+#require 'giphy'
 require './models/post.rb'
 require './models/tag.rb'
 require './models/tagging.rb'
@@ -10,11 +10,10 @@ require './models/user.rb'
 
 enable :sessions
 
-Giphy::Configuration.configure do |config|
-    config.api_key = ENV['API_GIPHY']
-end
+#Giphy::Configuration.configure do |config|
+    #config.api_key = ENV['API_GIPHY']
+#end
 
-set :database, {adapter: "postgresql", database: "pottr"}
 
 get '/' do
     if session[:user_id]
@@ -93,7 +92,7 @@ end
 
 post '/posts' do
     Post.create(post_id: params[:post_id], title: params[:title], image_url: params[:image_url], content: params[:content], timestamp: params[:timestamp], user_id: params[:user_id])
-    @gif = Giphy.random('harry potter')
+    #@gif = Giphy.random('harry potter')
     redirect '/'
 end
 
