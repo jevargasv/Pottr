@@ -1,9 +1,8 @@
 body {
     background-image: url("/images/admissionsoffice.png");
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-    position: fixed;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 h2 {
@@ -49,7 +48,7 @@ input {
     background-color: gold;
     color: #003152;
     font-family: "New";
-    left: 644px;
+    left: 668px;
     font-size: 24px;
     padding-bottom: .06rem;
     position: fixed;
@@ -66,6 +65,7 @@ input {
     font-family: "New";
     font-size: 24px;
     padding-bottom: .06rem;
+    left: 17px;
     position: fixed;
 }
 

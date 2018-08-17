@@ -2,12 +2,18 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
 require 'pg'
+require 'giphy'
 require './models/post.rb'
 require './models/tag.rb'
 require './models/tagging.rb'
 require './models/user.rb'
 
 enable :sessions
+
+Giphy::Configuration.configure do |config|
+    config.api_key = ENV['API_GIPHY']
+end
+
 set :database, {adapter: "postgresql", database: "pottr"}
 
 get '/' do
@@ -62,30 +68,59 @@ get '/logout' do
     redirect '/'
 end
 
+# All Post Route
+
+get '/posts' do
+    @posts = Dog.All
+    erb :post
+end
+
+# New Post Route
+
+get '/posts/new' do
+    erb :new_post
+    erb :logged_in_home_page
+end
+
+# Show Post Route
+
+get '/posts/:id' do
+    @specific_post = Post.find(params[:id])
+    erb :show_post
+end
+
 # Create Post Route
 
 post '/posts' do
     Post.create(post_id: params[:post_id], title: params[:title], image_url: params[:image_url], content: params[:content], timestamp: params[:timestamp], user_id: params[:user_id])
+    @gif = Giphy.random('harry potter')
     redirect '/'
+end
+
+# Edit Post Route
+
+get '/posts/:id/edit' do
+    @current_post = Post.find(params[:id])
+    erb :edit_post
 end
 
 # Update Post Route
 
 put '/posts/:id' do
-    post = Post.find(params[:id])
-    post.update(title: params[:title], image_url: params[:image_url], content: params[:content])
+    @post = Post.find(params[:id])
+    @post.update(title: params[:title], image_url: params[:image_url], content: params[:content])
 end
 
 # Delete Post Route
 
 delete '/posts/:id' do
-    post = Post.find(params[:id])
-    post.destroy
+    @post = Post.find(params[:id])
+    @post.destroy
     redirect '/'
 end
 
 private
 
-def get_existing_user
+def get_current_user
     User.find(session[:user_id])
 end

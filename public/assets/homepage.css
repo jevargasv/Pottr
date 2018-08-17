@@ -1,9 +1,8 @@
 body {
   background-image: url("/images/movingstaircase.jpg");
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
-  position: fixed; }
+  background-attachment: fixed;
+  background-position: center; }
 
 h2 {
   font-family: "Harry P";
@@ -22,5 +21,12 @@ h3 {
 
 h3:hover {
   color: white; }
+
+p {
+  font-family: "Helvetica";
+  text-align: left;
+  font-size: 22px;
+  color: #003152;
+  padding-top: 10px; }
 
 /*# sourceMappingURL=homepage.css.map */

@@ -1,9 +1,9 @@
 body {
     background-image: url("/images/hogwartsschoolpotter.jpg");
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     background-size: cover;
-    position: fixed;
 }
 
 #signup-button {
@@ -11,7 +11,7 @@ body {
     color: #003152;
     font-family: "New";
     font-size: 24px;
-    margin-left: 642px;
+    margin-left: 644px;
     padding-bottom: .06rem;
     position: fixed;
 }
@@ -65,9 +65,14 @@ p {
 }
 
 .flash {
-    border: none;
+    border: 1px solid #003152;
     color: white;
+    font-family: "New";
+    font-size: 20px;
     &.warning {
         background-color: red;
+    }
+    &.alert {
+        background-color: green;
     }
 }

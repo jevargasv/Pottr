@@ -1,16 +1,16 @@
 body {
   background-image: url("/images/hogwartsschoolpotter.jpg");
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
-  position: fixed; }
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover; }
 
 #signup-button {
   background-color: gold;
   color: #003152;
   font-family: "New";
   font-size: 24px;
-  margin-left: 642px;
+  margin-left: 644px;
   padding-bottom: .06rem;
   position: fixed; }
 
@@ -55,9 +55,13 @@ p {
   font-size: 22px; }
 
 .flash {
-  border: none;
-  color: white; }
+  border: 1px solid #003152;
+  color: white;
+  font-family: "New";
+  font-size: 20px; }
   .flash.warning {
     background-color: red; }
+  .flash.alert {
+    background-color: green; }
 
 /*# sourceMappingURL=main.css.map */
