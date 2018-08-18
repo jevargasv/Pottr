@@ -70,7 +70,7 @@ end
 # All Post Route
 
 get '/posts' do
-    @posts = Dog.All
+    @posts = Post.All
     erb :post
 end
 
