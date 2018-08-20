@@ -1,0 +1,34 @@
+<link rel="stylesheet" type="text/css" href="<%= url('/assets/homepage.css') %>">
+<div id="wrapper">
+<div id="navbar">
+<ul>
+ <li><a style="text-decoration:none;" href="/"><h2>P<h2></a></li>
+ <li><a style="text-decoration:none;" href="/logout"><h3>Log Out</h3></a></li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="width: 50rem; margin-left: auto; margin-right: auto; margin-top: 40px;">
+  <div class="card-body">
+
+<p>Edit Post</p>
+<form id="edit-post" method="post" action="/posts/<%= @post.id %>" autocomplete="off">
+    <input type="hidden" name="_method" value="PUT">
+    Title
+    <input type="text" name="title" placeholder="<%= @post.title %>" value="<%= @post.title %>">
+    Photo
+    <input type="text" name="image" placeholder="<%= @post.image_url %>" value="<%= @post.image_url %>">
+    Content
+    <textarea rows="5vh" cols="60vh" type="text" name="content"><%= @post.content %></textarea>
+    <input id="submit" type="submit" value="Publish">
+    <input type="button" value="Cancel" onclick="location.href='/';">
+</form>
+
+<p>Delete Post</p>
+<form method="post" action="/posts/<%= @post.id %>" autocomplete="off">
+    <input type="hidden" name="_method" value="DELETE">
+    <input id="delete-button" type="submit" value="Delete <%= @post.title %>">
+</form>
+
+  </div>
+</div>

@@ -8,87 +8,21 @@
 </div>
 </div>
 
-<div class="card" style="width: 50rem; margin-left: auto; margin-right: auto; margin-top: 40px;">
+<p id="welcome"> Welcome, <%= get_current_user.username %> </p>
+
+<% @users_posts_reverse.each do |post| %>
+<div class="card" style="width:65rem; margin-left:auto; margin-right:auto; margin-top:40px;">
   <div class="card-body">
-    <h5 class="card-title">Ol' bastard says that he lost everything!</h5>
-    <img class="card-img-top" src="https://media.giphy.com/media/NoBXm9gmqzx96/giphy.gif">
-    <p class="card-text">That bastard says that he lost everything after the divorce despite the fact that he has a new bird.</p>
-    <h6 class="card-time">2018-8-12,8:31:48</h6>
-    <h6 class="tag">weasley-twins</h6>
-  </div>
+    <div class="card-post">
+    <a style="text-decoration:none;" href="/users/<%= @user.id %>"><%= @user.username %></a>
+    <br>
+    <br>
+    <h5 class="card-title"> <%= post.title %> </h5>
+    <img class="card-img-top" src="<%= post.image_url %>">
+    <p class="card-content"> <%= post.content %> </p>
+    <h6 class="card-time"> Made on <%= post.timestamp %> </h6>
+ </div>
 </div>
 <br>
 <br>
-<div class="card" style="width: 50rem; margin-left: auto; margin-right: auto; margin-top: 40px;">
-  <div class="card-body">
-    <h5 class="card-title">Party like it's 1098!!!!</h5>
-    <img class="card-img-top" src="https://media.giphy.com/media/hsBZfDG7wiWHu/giphy.gif">
-    <p class="card-text">Work hard and party hard, mon!!!!</p>
-    <h6 class="card-time">2018-8-12,8:32:48</h6>
-    <h6 class="tag">dumbledore-snape</h6>
-  </div>
-</div>
-<br>
-<br>
-<div class="card" style="width: 50rem; margin-left: auto; margin-right: auto; margin-top: 40px;">
-  <div class="card-body">
-    <h5 class="card-title">Mood like when someone gets on my nerves...</h5>
-    <img class="card-img-top" src="https://media.giphy.com/media/Zymcw7sfNqziU/giphy.gif">
-    <p class="card-text">Feel like punching someone on the face, today!</p>
-    <h6 class="card-time">2018-8-12,8:33:48</h6>
-    <h6 class="tag">hermione-draco</h6>
-  </div>
-</div>
-<br>
-<br>
-<div class="card" style="width: 50rem; margin-left: auto; margin-right: auto; margin-top: 40px;">
-  <div class="card-body">
-    <h5 class="card-title">Oh, how I just love weddings!!!!</h5>
-    <img class="card-img-top" src="https://media.giphy.com/media/xIRLBrmLcVEyc/giphy.gif">
-    <p class="card-text">Love Bill and Fleur! The party, the dresses, the glamour!</p>
-    <h6 class="card-time">2018-8-12,8:34:48</h6>
-    <h6 class="tag">bill-fleur</h6>
-  </div>
-</div>
-<br>
-<br>
-<div class="card" style="width: 50rem; margin-left: auto; margin-right: auto; margin-top: 40px;">
-  <div class="card-body">
-    <h5 class="card-title">She is just as sane as I am.</h5>
-    <img class="card-img-top" src="https://media.giphy.com/media/2fWGscQciCtS8/giphy.gif">
-    <p class="card-text">Cool glasses! I wish I had them to read the Quibbler upside down, though.</p>
-    <h6 class="card-time">2018-8-12,8:35:48</h6>
-    <h6 class="tag">luna-lovegood</h6>
-  </div>
-</div>
-<br>
-<br>
-<div class="card" style="width: 50rem; margin-left: auto; margin-right: auto; margin-top: 40px;">
-  <div class="card-body">
-    <h5 class="card-title">What I think when people say they are the best: </h5>
-    <img class="card-img-top" src="https://media.giphy.com/media/OUwzqE4ZOk5Bm/giphy.gif">
-    <p class="card-text">Bitch, please! Prove it!!!!</p>
-    <h6 class="card-time">2018-8-12,8:36:48</h6>
-    <h6 class="tag">hermione-granger</h6>
-  </div>
-</div>
-<br>
-<br>
-<div class="card" style="width: 50rem; margin-left: auto; margin-right: auto; margin-top: 40px;">
-  <div class="card-body">
-    <h5 class="card-title">I DON'T LIKE SNICKERS!!!!!!!!!</h5>
-    <img class="card-img-top" src="https://media.giphy.com/media/3kBM1LIFniGuNncf1R/giphy.gif">
-    <p class="card-text">FUCK!!!! I HATE SNICKERS AND I HATE PEOPLE!!!! ARGHHHHHHH!!!!!</p>
-    <h6 class="card-time">2018-8-12,8:37:48</h6>
-    <h6 class="tag">lord-voldemort</h6>
-  </div>
-</div>
-<br>
-<br>
-
-
-
-
-
-
-
+<% end %>

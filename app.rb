@@ -2,22 +2,24 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
 require 'pg'
-#require 'giphy'
+# require 'giphy'
 require './models/post.rb'
 require './models/tag.rb'
 require './models/tagging.rb'
 require './models/user.rb'
 
 enable :sessions
+# set :database, {adapter: 'postgresql', database: 'pottr'}
 
-#Giphy::Configuration.configure do |config|
-    #config.api_key = ENV['API_GIPHY']
-#end
-
+# Does not work
+# Giphy::Configuration.configure do |config|
+    # config.api_key = ENV['API_GIPHY']
+# end
 
 get '/' do
     if session[:user_id]
-        user = User.find(session[:user_id])
+        @user = User.find(session[:user_id])
+        @users_posts_reverse = @user.posts
         erb :logged_in_home_page
     else
         erb :logged_out_home_page
@@ -33,8 +35,8 @@ end
 #Sign-Up Route
 
 post '/sign_up' do
-    user = User.create(username: params[:username], password: params[:password], first_name: params[:first_name], last_name: params[:last_name], email: params[:email], birthday: params[:birthday])
-    session[:user_id] = user.id
+    @user = User.create(username: params[:username], password: params[:password], first_name: params[:first_name], last_name: params[:last_name], email: params[:email], birthday: params[:birthday])
+    session[:user_id] = @user.id
     flash[:alert] =  "Thank you for signing up! Welcome to Pottr!"
     redirect '/'
 end
@@ -48,10 +50,10 @@ end
 #Login Route
 
 post '/login' do
-    user = User.find_by(username: params[:username])
-    if user && user.password == params[:password]
-        session[:user_id] = user.id
-        flash[:alert] = "#{user.username} has logged in."
+    @user = User.find_by(username: params[:username])
+    if @user && @user.password == params[:password]
+        session[:user_id] = @user.id
+        flash[:alert] = "#{@user.username} has logged in."
         redirect '/'
     else
         flash[:warning] = "Your username and/or password is incorrect."
@@ -67,7 +69,70 @@ get '/logout' do
     redirect '/'
 end
 
-# All Post Route
+# All Users Route
+
+get '/users' do
+    @users = User.All
+    erb :user
+end
+
+#User Id Route
+
+get '/users/:id' do
+    @user = User.find(params[:id])
+    erb :user
+end
+
+# Show User Id Route
+
+get '/users/:id/profile' do
+    if session[:user_id]
+        @user = User.find(session[:user_id])
+        erb :show_user
+    else
+        redirect '/login'
+    end
+
+end
+
+#Edit User Account
+
+get '/users/:id/edit' do
+    if session[:user_id] == params[:id]
+        @user = User.find(session[:blogger_id])
+        @users_posts = @user.posts
+        erb :edit_user
+    else
+        flash[:warning] = "Please sign in."
+        redirect '/signin'
+    end
+
+end
+
+# Update User Account
+
+put '/users/:id' do
+    @user = User.find(params[:id])
+    @user.update(username: params[:username], password: params[:password], first_name: params[:first_name], last_name: params[:last_name], email: params[:email], birthday: params[:birthday])
+    redirect "/users/#{params[:id]}/profile"
+end
+
+# Delete User Account
+
+delete '/users/:id' do
+    if session[:blogger_id]
+        @user = User.find(params[:id])
+        @user.destroy
+        session[:User_id] = nil
+        flash[:info] = "AVADA KEDAVRA! Your account has been destroyed."
+        redirect '/'
+    else
+        flash[:warning] = "Login, please."
+        redirect '/login'
+    end
+end
+
+# All Posts Route
 
 get '/posts' do
     @posts = Post.All
@@ -78,7 +143,6 @@ end
 
 get '/posts/new' do
     erb :new_post
-    erb :logged_in_home_page
 end
 
 # Show Post Route
@@ -92,22 +156,26 @@ end
 
 post '/posts' do
     Post.create(post_id: params[:post_id], title: params[:title], image_url: params[:image_url], content: params[:content], timestamp: params[:timestamp], user_id: params[:user_id])
-    #@gif = Giphy.random('harry potter')
     redirect '/'
 end
 
 # Edit Post Route
 
 get '/posts/:id/edit' do
-    @current_post = Post.find(params[:id])
-    erb :edit_post
+    if session[:user_id] == Post.find(params[:id]).user.id
+        @post = Post.find(params[:id])
+        erb :edit_post
+    else
+        flash[:warning] == "Login, please."
+    end
 end
 
 # Update Post Route
 
 put '/posts/:id' do
     @post = Post.find(params[:id])
-    @post.update(title: params[:title], image_url: params[:image_url], content: params[:content])
+    @post.update(user_id: session[:user_id], title: params[:title], image_url: params[:image_url], content: params[:content])
+    redirect '/'
 end
 
 # Delete Post Route
