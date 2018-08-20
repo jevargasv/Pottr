@@ -71,16 +71,16 @@ end
 
 # All Users Route
 
-get '/users' do
-    @users = User.All
-    erb :user
+get '/aparecium' do
+    @users = User.all
+    erb :aparecium
 end
 
 #User Id Route
 
 get '/users/:id' do
     @user = User.find(params[:id])
-    erb :user
+    erb :users_page
 end
 
 # Show User Id Route
@@ -135,7 +135,7 @@ end
 # All Posts Route
 
 get '/posts' do
-    @posts = Post.All
+    @posts = Post.all
     erb :post
 end
 

@@ -2,7 +2,7 @@
 
 User.create(user_id: 1, username: 'jazztime457', password: 'bubbleyum28', first_name: 'Jasper', last_name: 'Jones', email: 'jazztime457@gmail.com', birthday: DateTime.new(1990,01,15))
 User.create(user_id: 2, username: 'jamiebuzz288', password: 'crunchtime20', first_name: 'Jamie', last_name: 'McVickers', email: 'jamiebuzz288@gmail.com', birthday: DateTime.new(1986,06,11))
-User.create(user_id: 7, username: 'killallhumans666', password: 'thecandyman66', first_name: 'Richard', last_name: 'Davies', email: 'killallhumans666@gmail.com', birthday: DateTime.new(1985,03,23))
+User.create(user_id: 3, username: 'killallhumans666', password: 'thecandyman66', first_name: 'Richard', last_name: 'Davies', email: 'killallhumans666@gmail.com', birthday: DateTime.new(1985,03,23))
 
 # Giphy gifs
 

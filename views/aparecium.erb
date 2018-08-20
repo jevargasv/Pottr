@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="<%= url('/assets/homepage.css') %>">
+<div id="wrapper">
+<div id="navbar">
+<ul>
+ <li><a style="text-decoration:none;" href="/"><h2>P<h2></a></li>
+ <li><a style="text-decoration:none;" href="/logout"><h3>Log Out</h3></a></li>
+</ul>
+</div>
+</div>
+
+<% @users.each do |user| %>
+  <% user.posts.take(4).each do |post| %>
+    <div class="card" style="width:65rem; margin-left:auto; margin-right:auto; margin-top:40px;">
+      <div class="card-body">
+        <div class="card-post">
+        <a style="text-decoration:none;" href="/users/<%= user.id %>"> <%= user.username %> </a>
+        <br>
+        <br>
+        <h5 style="font-size:40px;" class="card-title"> <%= post.title %> </h5>
+        <img class="card-img-top" src="<%= post.image_url %>">
+        <br>
+        <br>
+        <p class="card-content"> <%= post.content %> </p>
+        <h6 class="card-time"> Made on <%= post.timestamp %> </h6>
+        <br>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+  <% end %>
+<% end %>
