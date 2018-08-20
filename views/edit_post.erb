@@ -8,27 +8,47 @@
 </div>
 </div>
 
-<div class="card" style="width: 50rem; margin-left: auto; margin-right: auto; margin-top: 40px;">
+<div class="card" style="background-color:#003152; width: 45rem; margin-left: auto; padding:10px; margin-right: auto; margin-top: 40px;">
   <div class="card-body">
 
-<p>Edit Post</p>
+<br>
+<br>
+<h4 id="edit" style="font-family:"New"; color:gold; font-size:40px;">Edit Post</h4>
+<br>
+<br>
 <form id="edit-post" method="post" action="/posts/<%= @post.id %>" autocomplete="off">
     <input type="hidden" name="_method" value="PUT">
-    Title
+    <h4 id="title" style="font-family:"New"; color:gold; font-size:40px;">Title</h4>
+    <br>
     <input type="text" name="title" placeholder="<%= @post.title %>" value="<%= @post.title %>">
-    Photo
+    <br>
+    <br>
+    <br>
+    <h4 id="image" style="font-family:"New"; color:gold; font-size:40px;">Image</h4>
+    <br>
     <input type="text" name="image" placeholder="<%= @post.image_url %>" value="<%= @post.image_url %>">
-    Content
-    <textarea rows="5vh" cols="60vh" type="text" name="content"><%= @post.content %></textarea>
-    <input id="submit" type="submit" value="Publish">
-    <input type="button" value="Cancel" onclick="location.href='/';">
+    <br>
+    <br>
+    <br>
+    <h4 id="content" style="font-family:"New"; color:gold; font-size:40px;">Content</h4>
+    <br>
+    <textarea rows="5vh" cols="80vh" type="text" name="content"><%= @post.content %></textarea>
+    <input style="margin-left:196px; margin-right:auto;" type="submit" button class="btn mt-5" id="publish-button" value="Publish">
+    <a href="/"><input style="margin-left:20px; margin-right:auto;" type="button" button class="btn mt-5" id="forget-it-button" value="Forget It"></a>
+    <br>
+    <br>
+    <br>
 </form>
 
-<p>Delete Post</p>
+<h4 id="delete" style="font-family:"New"; color:gold; font-size:40px;">Delete Post</h4>
 <form method="post" action="/posts/<%= @post.id %>" autocomplete="off">
     <input type="hidden" name="_method" value="DELETE">
-    <input id="delete-button" type="submit" value="Delete <%= @post.title %>">
+    <input style="margin-left:142px;" type="button" button class="btn mt-5" id="delete-button" type="submit" value="Avada Kedavra, <%= @post.title %>">
 </form>
+<br>
+<br>
 
   </div>
 </div>
+<br>
+<br>

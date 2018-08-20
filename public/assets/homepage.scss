@@ -36,13 +36,83 @@ h3:hover {
 
 #welcome {
     font-family: "New";
-    text-align: left;
     font-size: 40px;
     color: gold;
     padding-top: 40px;
     text-align: center;
 }
 
+#edit {
+    font-family: "New";
+    font-size: 40px;
+    color: gold;
+    text-align: center;
+}
+
+#delete {
+    font-family: "New";
+    font-size: 40px;
+    color: gold;
+    text-align: center;
+}
+
+#title {
+    font-family: "New";
+    font-size: 40px;
+    color: gold;
+}
+
+#image {
+    font-family: "New";
+    font-size: 40px;
+    color: gold;
+}
+
+#content {
+    font-family: "New";
+    font-size: 40px;
+    color: gold;
+}
+
 a {
     white-space: nowrap;
+}
+
+#publish-button {
+    background-color: gold;
+    color: #003152;
+    font-family: "New";
+    font-size: 24px;
+    padding-bottom: .06rem;
+}
+
+#publish-button:hover {
+    background-color: white;
+    color: gold;
+}
+
+#delete-button {
+    background-color: gold;
+    color: #003152;
+    font-family: "New";
+    font-size: 24px;
+    padding-bottom: .06rem;
+}
+
+#delete-button:hover {
+    background-color: white;
+    color: gold;
+}
+
+#forget-it-button {
+    background-color: gold;
+    color: #003152;
+    font-family: "New";
+    font-size: 24px;
+    padding-bottom: .06rem;
+}
+
+#forget-it-button:hover {
+    background-color: white;
+    color: gold;
 }
