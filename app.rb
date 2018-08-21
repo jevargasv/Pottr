@@ -164,6 +164,7 @@ post '/posts' do
     if session[:user_id]
         Post.create(post_id: params[:post_id], title: params[:title], image_url: params[:image_url], content: params[:content], timestamp: params[:timestamp], user_id: params[:user_id])
     redirect '/'
+    end
 end
 
 # Edit Post Route
