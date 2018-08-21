@@ -19,7 +19,7 @@ enable :sessions
 get '/' do
     if session[:user_id]
         @user = User.find(session[:user_id])
-        @users_posts_reverse = @user.posts
+        @users_posts_sort = @user.posts
         erb :logged_in_home_page
     else
         erb :logged_out_home_page
@@ -98,8 +98,8 @@ end
 #Edit User Account
 
 get '/users/:id/edit' do
-    if session[:user_id] == params[:id]
-        @user = User.find(session[:blogger_id])
+    if session[:user_id] == params[:id].to.i
+        @user = User.find(session[:user_id])
         @users_posts = @user.posts
         erb :edit_user
     else
@@ -124,7 +124,7 @@ delete '/users/:id' do
         @user = User.find(params[:id])
         @user.destroy
         session[:User_id] = nil
-        flash[:info] = "AVADA KEDAVRA! Your account has been destroyed."
+        flash[:alert] = "AVADA KEDAVRA! Your account has been destroyed."
         redirect '/'
     else
         flash[:warning] = "Login, please."
@@ -187,6 +187,7 @@ end
 delete '/posts/:id' do
     @post = Post.find(params[:id])
     @post.destroy
+    flash[:alert] = "AVADA KEDAVRA! Your post has been destroyed."
     redirect '/'
 end
 
