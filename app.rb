@@ -80,6 +80,7 @@ end
 
 get '/users/:id' do
     @user = User.find(params[:id])
+    @users_posts_sort = @user.posts
     erb :users_page
 end
 
@@ -98,9 +99,9 @@ end
 #Edit User Account
 
 get '/users/:id/edit' do
-    if session[:user_id] == params[:id].to.i
+    if session[:user_id] == params[:id].to_i
         @user = User.find(session[:user_id])
-        @users_posts = @user.posts
+        @users_posts_sort = @user.posts
         erb :edit_user
     else
         flash[:warning] = "Login, please."
@@ -136,13 +137,14 @@ end
 
 get '/posts' do
     @posts = Post.all
+    erb :create_post
 end
 
 # New Post Route
 
 get '/posts/new' do
     if session[:user_id]
-        erb :new_post
+        erb :create_post
     else
         flash[:warning] = "Login, please."
         redirect '/login'
@@ -159,7 +161,8 @@ end
 # Create Post Route
 
 post '/posts' do
-    Post.create(post_id: params[:post_id], title: params[:title], image_url: params[:image_url], content: params[:content], timestamp: params[:timestamp], user_id: params[:user_id])
+    if session[:user_id]
+        Post.create(post_id: params[:post_id], title: params[:title], image_url: params[:image_url], content: params[:content], timestamp: params[:timestamp], user_id: params[:user_id])
     redirect '/'
 end
 

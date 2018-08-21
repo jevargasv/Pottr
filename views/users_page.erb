@@ -11,21 +11,20 @@
 <p id="welcome"> Welcome, <%= @user.username %> </p>
 
 <% @users_posts_sort.each do |post| %>
-    <div class="card" style="width:65rem; margin-left:auto; margin-right:auto; margin-top:40px;">
-      <div class="card-body">
-        <div class="card-post">
-        <br>
-        <br>
-        <h5 id="title" style="font-size:40px; color:black; font-weight:bold; font-family:Helvetica;" class="card-title"> <%= post.title %> </h5>
-        <img class="card-img-top" src="<%= post.image_url %>">
-        <br>
-        <br>
-        <p class="card-content"> <%= post.content %> </p>
-        <h6 class="card-time"> Made on <%= post.timestamp %> </h6>
-        <br>
-        </div>
+  <div class="card" style="width:65rem; margin-left:auto; margin-right:auto; margin-top:40px;">
+    <div class="card-body">
+      <div class="card-post">
+      <br>
+      <h5 id="title" style="font-size:40px; color:black; font-weight:bold; font-family:Helvetica;" class="card-title"> <%= post.title %> </h5>
+      <img class="card-img-top" src="<%= post.image_url %>">
+      <br>
+      <br>
+      <p class="card-content"> <%= post.content %> </p>
+      <h6 class="card-time"> Made on <%= post.timestamp %> </h6>
+      <br>
       </div>
     </div>
+  </div>
   <br>
   <br>
 <% end %>
