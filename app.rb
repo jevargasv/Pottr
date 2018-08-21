@@ -103,8 +103,8 @@ get '/users/:id/edit' do
         @users_posts = @user.posts
         erb :edit_user
     else
-        flash[:warning] = "Please sign in."
-        redirect '/signin'
+        flash[:warning] = "Login, please."
+        redirect '/login'
     end
 
 end
@@ -136,13 +136,17 @@ end
 
 get '/posts' do
     @posts = Post.all
-    erb :post
 end
 
 # New Post Route
 
 get '/posts/new' do
-    erb :new_post
+    if session[:user_id]
+        erb :new_post
+    else
+        flash[:warning] = "Login, please."
+        redirect '/login'
+    end
 end
 
 # Show Post Route

@@ -19,12 +19,26 @@ h2:hover {
 h3 {
     font-family: "New";
     text-align: right;
-    margin-left: 1222px;
+    margin-left: 1260px; 
     color: gold;
 }
 
 h3:hover {
     color: white;
+}
+
+h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 22px;
+    color: white; 
+}
+
+#title {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 22px;
+    color: black;    
 }
 
 .card-content {
@@ -113,6 +127,19 @@ a {
 }
 
 #forget-it-button:hover {
+    background-color: white;
+    color: gold;
+}
+
+#edit-button {
+    background-color: gold;
+    color: #003152;
+    font-family: "New";
+    font-size: 24px;
+    padding-bottom: .06rem;
+}
+
+#edit-button:hover {
     background-color: white;
     color: gold;
 }

@@ -1,0 +1,39 @@
+<link rel="stylesheet" type="text/css" href="<%= url('/assets/homepage.css') %>">
+<div id="wrapper">
+<div id="navbar">
+<ul>
+ <li><a style="text-decoration:none;" href="/"><h2>P<h2></a></li>
+ <li><a style="text-decoration:none;" href="/logout"><h3 style="margin-left:1222px;">Log Out</h3></a></li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="background-color:#003152; width: 45rem; margin-left: auto; padding:10px; margin-right: auto; margin-top: 40px;">
+  <div class="card-body">
+    <div id="profile-info">
+    <br>
+     <h4 id="edit" style="font-family:"New"; color:gold; font-size:40px;">User Profile</h4>
+     <br>
+     <br>
+      <div class="info">
+          <h4 id="edit" style="font-family:"New"; color:gold; font-size:40px;">Name</h4> <h5 style="color:white; text-align:center;"> <%= @user.first_name %> <%= @user.last_name %> </h5>
+          <br>
+          <br>
+          <h4 id="edit" style="font-family:"New"; color:gold; font-size:40px;">Email</h4> <h5 style="color:white; text-align:center;"> <%= @user.email %> </h5>
+          <br>
+          <br>
+          <h4 id="edit" style="font-family:"New"; color:gold; font-size:40px;">Birthday</h4> <h5 style="color:white; text-align:center;"> <%= @user.birthday %> </h5>
+          <br>
+          <br>
+          <h4 id="edit" style="font-family:"New"; color:gold; font-size:40px;">Username</h4> <h5 style="color:white; text-align:center;"> <%= @user.username %> </h5>
+          <a style="margin-left:292px;" href="/users/ <%= session[:user_id] %> /edit"><input id="edit-button" type="button" button class="btn mt-5" value="Edit"></a>
+          <br>
+          <br>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>

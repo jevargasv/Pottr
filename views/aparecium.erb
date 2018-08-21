@@ -3,7 +3,7 @@
 <div id="navbar">
 <ul>
  <li><a style="text-decoration:none;" href="/"><h2>P<h2></a></li>
- <li><a style="text-decoration:none;" href="/logout"><h3>Log Out</h3></a></li>
+ <li><a style="text-decoration:none;" href="/login"><h3>Login</h3></a></li>
 </ul>
 </div>
 </div>
@@ -16,13 +16,17 @@
         <a style="text-decoration:none;" href="/users/<%= user.id %>"> <%= user.username %> </a>
         <br>
         <br>
-        <h5 style="font-size:40px;" class="card-title"> <%= post.title %> </h5>
+        <h5 id="style" style="font-size:40px; color:black; font-weight:bold; font-family:Helvetica; text-align:left;" class="card-title"> <%= post.title %> </h5>
         <img class="card-img-top" src="<%= post.image_url %>">
         <br>
         <br>
         <p class="card-content"> <%= post.content %> </p>
         <h6 class="card-time"> Made on <%= post.timestamp %> </h6>
         <br>
+        <a style="text-decoration:none;" href="/users/ <%= session[:user_id] %> /profile"> View User's Profile </a>
+        <br>
+        <br>
+        <a style="text-decoration:none;" href="/posts/new"> Create New Post </a>
         </div>
       </div>
     </div>
