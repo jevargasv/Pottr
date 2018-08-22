@@ -121,7 +121,7 @@ end
 # Delete User Account
 
 delete '/users/:id' do
-    if session[:blogger_id]
+    if session[:user_id]
         @user = User.find(params[:id])
         @user.destroy
         session[:User_id] = nil
