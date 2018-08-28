@@ -44,32 +44,27 @@ input {
     padding-right: 80px;
 }
 
-#signin-button {
+#signin-button2 {
     background-color: gold;
     color: #003152;
     font-family: "New";
-    left: 668px;
     font-size: 24px;
     padding-bottom: .06rem;
-    position: fixed;
 }
 
-#signin-button:hover {
+#signin-button2:hover {
     background-color: #003152;
     color: gold;
 }
 
-#signup-button {
+#signup-button2 {
     background-color: gold;
     color: #003152;
     font-family: "New";
     font-size: 24px;
-    padding-bottom: .06rem;
-    left: 17px;
-    position: fixed;
-}
+    padding-bottom: .06rem; }
 
-#signup-button:hover {
+#signup-button2:hover {
     background-color: #003152;
     color: gold;
 }

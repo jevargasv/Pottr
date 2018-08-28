@@ -9,11 +9,11 @@
 </div>
 
 <% @users.each do |user| %>
-  <% user.posts.take(4).each do |post| %>
+  <% user.posts.take(20).each do |post| %>
     <div class="card" style="width:65rem; margin-left:auto; margin-right:auto; margin-top:40px;">
       <div class="card-body">
         <div class="card-post">
-        <a style="text-decoration:none;" href="/users/ <%= user.id %> "> <%= user.username %> </a>
+        <a style="text-decoration:none;" href="/users/ <%= user.id %> "> View <%= user.username %>'s Posts </a>
         <br>
         <br>
         <h5 id="style" style="font-size:40px; color:black; font-weight:bold; font-family:Helvetica; text-align:left;" class="card-title"> <%= post.title %> </h5>

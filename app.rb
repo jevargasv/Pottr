@@ -79,9 +79,14 @@ end
 #User Id Route
 
 get '/users/:id' do
+    if session[:user_id]
     @user = User.find(params[:id])
     @users_posts_sort = @user.posts
     erb :users_page
+    else
+        flash[:warning] = "Login, please."
+        redirect '/login'
+    end
 end
 
 # Show User Id Route
@@ -124,7 +129,7 @@ delete '/users/:id' do
     if session[:user_id]
         @user = User.find(params[:id])
         @user.destroy
-        session[:User_id] = nil
+        session[:user_id] = nil
         flash[:alert] = "AVADA KEDAVRA! Your account has been destroyed."
         redirect '/'
     else
@@ -154,8 +159,13 @@ end
 # Show Post Route
 
 get '/posts/:id' do
+    if session[:user_id]
     @specific_post = Post.find(params[:id])
     erb :show_post
+    else
+        flash[:warning] = "Login, please."
+        redirect '/login'
+    end
 end
 
 # Create Post Route

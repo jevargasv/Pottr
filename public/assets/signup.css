@@ -40,10 +40,8 @@ input {
   background-color: gold;
   color: #003152;
   font-family: "New";
-  left: 662px;
   font-size: 24px;
-  padding-bottom: .06rem;
-  position: fixed; }
+  padding-bottom: .06rem; }
 
 #signin-button:hover {
   background-color: #003152;
