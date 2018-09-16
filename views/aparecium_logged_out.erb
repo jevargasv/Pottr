@@ -1,0 +1,39 @@
+<link rel="stylesheet" type="text/css" href="<%= url('/assets/homepage.css') %>">
+<div id="wrapper">
+<nav style="background-color: #003152;" class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a style="text-decoration:none;" class="navbar-brand" href="/"><h2>P</h2></a>
+    </div>
+    <ul style="display: inline-block;" class="nav navbar-nav">
+      <li style="display: inline; float:left;"><a style="text-decoration:none;" href="/login"><h3>Login</h3></a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+<% @users = User.all %>
+<% @users.each do |user| %>
+  <% user.posts.take(20).each do |post| %>
+    <div class="card" style="width:65rem; margin-left:auto; margin-right:auto; margin-top:40px;">
+      <div class="card-body">
+        <div class="card-post">
+        <a style="text-decoration:none;" href="/users/ <%= user.id %> "> View <%= user.username %>'s Posts </a>
+        <br>
+        <br>
+        <h5 id="style" style="font-size:40px; color:black; font-weight:bold; font-family:Helvetica; text-align:left;" class="card-title"> <%= post.title %> </h5>
+        <img class="card-img-top" src="<%= post.image_url %>">
+        <br>
+        <br>
+        <p class="card-content"> <%= post.content %> </p>
+        <h6 class="card-time"> Made on <%= post.timestamp %> </h6>
+        <br>
+        <a style="text-decoration:none;" href="/users/ <%= user.id %> /profile"> View User's Profile </a>
+        <br>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+  <% end %>
+<% end %>

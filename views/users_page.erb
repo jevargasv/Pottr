@@ -8,7 +8,11 @@
 </div>
 </div>
 
-<p id="welcome"> <%= @user.username %> </p>
+<div class="card" style="background-color: rgba(0, 0, 0, 0.72); width: 35rem; margin-left: auto; padding: 4px; margin-right: auto; margin-top: 40px;">
+  <div class="card-body">
+    <p id="welcome"> <%= @user.username %> </p>
+  </div>
+</div>
 
 <% @users_posts_sort.each do |post| %>
   <div class="card" style="width:65rem; margin-left:auto; margin-right:auto; margin-top:40px;">

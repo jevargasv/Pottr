@@ -74,6 +74,9 @@ h5 {
   font-size: 40px;
   color: gold; }
 
+.items:hover {
+  color: white; }
+
 a {
   white-space: nowrap; }
 

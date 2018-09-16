@@ -16,6 +16,17 @@ body {
   background-color: #003152;
   color: gold; }
 
+#aparecium-button {
+  background-color: gold;
+  color: #003152;
+  font-family: "New";
+  font-size: 24px;
+  padding-bottom: .06rem; }
+
+#aparecium-button:hover {
+  background-color: #003152;
+  color: gold; }
+
 h1 {
   font-family: "Harry P";
   text-align: center;
@@ -42,7 +53,6 @@ h3:hover {
   color: white; }
 
 #navbar li {
-  display: inline-block;
   list-style-type: none;
   margin-top: 30px; }
 
@@ -58,8 +68,12 @@ p {
   font-family: "New";
   font-size: 20px; }
   .flash.warning {
-    background-color: red; }
+    background-color: red;
+    text-decoration: none;
+    margin: 0; }
   .flash.alert {
-    background-color: green; }
+    background-color: green;
+    text-decoration: none;
+    margin: 0; }
 
 /*# sourceMappingURL=main.css.map */

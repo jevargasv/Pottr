@@ -19,6 +19,19 @@ body {
     color: gold;
 }
 
+#aparecium-button {
+    background-color: gold;
+    color: #003152;
+    font-family: "New";
+    font-size: 24px;
+    padding-bottom: .06rem;
+}
+
+#aparecium-button:hover {
+    background-color: #003152;
+    color: gold;
+}
+
 h1 {
     font-family: "Harry P";
     text-align: center;
@@ -50,7 +63,6 @@ h3:hover {
 }
 
 #navbar li {
-    display: inline-block;
     list-style-type: none;
     margin-top: 30px;
 }
@@ -69,8 +81,12 @@ p {
     font-size: 20px;
     &.warning {
         background-color: red;
+        text-decoration: none;
+        margin: 0;
     }
     &.alert {
         background-color: green;
+        text-decoration: none;
+        margin: 0;
     }
 }

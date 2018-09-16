@@ -72,8 +72,12 @@ end
 # All Users Route
 
 get '/aparecium' do
+    if session[:user_id]
     @users = User.all
-    erb :aparecium
+    erb :aparecium_logged_in
+    else
+        erb :aparecium_logged_out
+    end
 end
 
 #User Id Route
@@ -96,6 +100,7 @@ get '/users/:id/profile' do
         @user = User.find(session[:user_id])
         erb :show_user
     else
+        flash[:warning] = "Login, please."
         redirect '/login'
     end
 

@@ -45,14 +45,14 @@
                 <input style="margin-left:0px; margin-right:auto;" type="submit" button class="btn mt-5" id="edit-button" value="Edit">
                 <a href='/users/ <%=session[:user_id]%> /profile'><input style="margin-left:20px; margin-right:auto;" type="button" button class="btn mt-5" id="forget-it-button" value="Forget It"></a>
               </div>
-    </form></center>
+            </form>
   <br>
   <br>
   <h4 id="edit" style="font-family:"New"; color:gold; font-size:40px;">Delete User Profile</h4>
     <form method="POST" action="/users/<%= session[:user_id] %>" autocomplete="off">
         <input type="hidden" name="_method" value="DELETE">
-        <input style="margin-left:125px;" type="button" button class="btn mt-5" id="delete-button" type="submit" value="Avada Kedavra, <%= @user.username %> !">
-    </form>
+        <input type="button" button class="btn mt-5" id="delete-button" type="submit" value="Avada Kedavra, <%= @user.username %> !">
+    </form></center>
     <br>
     <br>
   </div>
