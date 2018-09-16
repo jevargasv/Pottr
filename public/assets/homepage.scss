@@ -21,10 +21,18 @@ h3 {
     text-align: right;
     margin-left: 1260px; 
     color: gold;
+    .items {
+        color: #003152; 
+        margin-left: auto; 
+        margin-right: auto;    
+    }
 }
 
 h3:hover {
     color: white;
+    .items:hover {
+        color: white;
+    }
 }
 
 h5 {
@@ -86,10 +94,6 @@ h5 {
     font-family: "New";
     font-size: 40px;
     color: gold;
-}
-
-.items:hover {
-    color: white;
 }
 
 a {
