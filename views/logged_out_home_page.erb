@@ -1,17 +1,30 @@
 <link rel="stylesheet" type="text/css" href="<%= url('/assets/main.css') %>">
 <div id="wrapper">
-<div id="navbar">
-<ul>
- <li><a style="text-decoration:none;" href="/"><h2>P<h2></a></li>
- <li><a style="text-decoration:none;" href="/login"><h3>Login</h3></a></li>
-</ul>
-</div>
+<nav style="background-color: #003152;" class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a style="text-decoration:none;" class="navbar-brand" href="/"><h2>P</h2></a>
+    </div>
+    <ul style="display: inline-block;" class="nav navbar-nav">
+      <li style="display: inline; float:left;"><a style="text-decoration:none;" href="/login"><h3>Login</h3></a></li>
+    </ul>
+  </div>
+</nav>
 
 <div class="main-page-wrapper">
     <h1>Pottr</h1>
     <br>
     <p>Dedicated to the fans of <br>
     Harry Potter.</p>
-    <a style="text-decoration:none;" href="/aparecium"><p>Enter!</p></a>
-    <center><a href="/sign_up"/><button class="btn mt-5" id="signup-button">Sign Up</button></a></center>
+    <p>Enter!</p>
+    <center><a href="/sign_up"><button class="btn mt-5" id="signup-button">Sign Up</button></a></center>
+    <br>
+    <br>
+    <br>
+    <p>Curious? View some posts before signing up!</p>
+    <center><a href="/aparecium"><button class="btn mt-5" id="aparecium-button">Aparecium!</button></a></center>
+    <br>
+    <br>
+    <br>
+</div>
 </div>
