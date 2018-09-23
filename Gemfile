@@ -4,6 +4,6 @@ source 'https://rubygems.org' do
     gem 'sinatra-activerecord'
     gem 'sinatra-flash'
     gem 'rake'
-    gem 'pg'
+    gem 'pg', '~> 1.0.0'
     #gem 'sinatra/reloader'
 end
