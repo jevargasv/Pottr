@@ -13,7 +13,7 @@ enable :sessions
 
 # Does not work
 # Giphy::Configuration.configure do |config|
-    # config.api_key = ENV['API_GIPHY']
+    # config.api_key = ENV['GIPHY_API']
 # end
 
 get '/' do
